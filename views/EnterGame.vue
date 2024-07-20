@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <WhiteScreen></WhiteScreen>
+    <WhiteScreen>1111</WhiteScreen>
   </div>
 </template>
 
