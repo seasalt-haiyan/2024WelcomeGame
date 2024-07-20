@@ -28,7 +28,7 @@ export default {
   .main{
     background-color: red;
     opacity: 0.7;
-        background: url(../static/1.png);
+        background: url(../src/assets/house.jpg);
         background-size: contain;
         background-repeat: no-repeat;
   }
@@ -39,7 +39,7 @@ export default {
   .main{
     background-color: red;
     opacity: 0.7;
-        background: url(../static/output.jpg);
+        background: url(../src/assets/house.jpg);
         background-size: contain;
         background-repeat: no-repeat;
         background-position:  center center;

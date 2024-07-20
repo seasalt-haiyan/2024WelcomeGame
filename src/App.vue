@@ -5,7 +5,7 @@
 
 <script>
     import WhiteScreen from '../components/WhiteScreen.vue';
-import EnterGame from '../views/EnterGame.vue';
+    import EnterGame from './Views/EnterGame.vue';
 
     export default{
         components:{
