@@ -1,15 +1,15 @@
 <template>
-    <enter-game></enter-game>
+    
 
 </template>
 
 <script>
-    import WhiteScreen from './Component/WhiteScreen.vue';
+
     import EnterGame from './Views/EnterGame.vue'
     export default{
         components:{
-            WhiteScreen,
-            EnterGame
+
+            // EnterGame
         }
     }
 </script>
