@@ -1,0 +1,27 @@
+div {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: 45;
+    line-height: 1.5;
+
+}
+
+@media (max-width: 768px) {
+
+    /* 手机设备的样式 */
+    div {
+        font-size: 45;
+        line-height: 1.5;
+        overflow: scroll;
+    }
+
+}
+
+@media (min-width: 769px) {
+
+    /* 电脑设备的样式 */
+    div {
+        font-size: 75;
+        line-height: 2;
+    }
+}

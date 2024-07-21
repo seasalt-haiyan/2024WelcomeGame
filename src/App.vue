@@ -6,4 +6,6 @@
 import Login from './Component/Login.vue'
 </script>
 
-<style></style>
+<style>
+
+</style>
