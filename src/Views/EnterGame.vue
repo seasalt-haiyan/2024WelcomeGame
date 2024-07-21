@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import WhiteScreen from '../components/WhiteScreen.vue'
+import WhiteScreen from '../Components/WhiteScreen.vue'
 import enterTwo from './enterGame/enterTwo.vue'
 import enterOne from './enterGame/enterOne.vue'
 import {ref,reactive} from 'vue'
@@ -62,14 +62,14 @@ export default {
         width: 100vw;
         height: 100vh;
         opacity: 0.7;
-        background: url(../assets/house.jpg);
+        background: url(../assest/house.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position:  center center;
 
     }
     .main2{
-      background: url(../assets/library.jpg);
+      background: url(../assest/library.jpg);
       background-size: cover;
       background-repeat: no-repeat;
       background-position:  center center;
