@@ -1,9 +1,15 @@
 <template>
-<Login />
+<DivideClass/>
 </template>
 
-<script setup>
-import Login from './Component/Login.vue'
+<script>
+import DivideClass from './Components/DivideClass.vue'
+export default {
+  name: 'App',
+  components: {
+    DivideClass
+  }
+}
 </script>
 
 <style>
