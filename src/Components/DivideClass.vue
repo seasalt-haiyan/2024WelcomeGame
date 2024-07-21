@@ -1,5 +1,6 @@
 <template>
     <div class="overlay"></div>
+    <div class="background"></div>
   <div id="CollectBox">
         <div id="title">选择你想去的学院</div>
         <div class="CollectItem" id="front">
