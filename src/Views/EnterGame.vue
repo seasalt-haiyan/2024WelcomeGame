@@ -34,7 +34,7 @@ export default {
             isShow.One=!isShow.One
             isShow.Two=!isShow.Two
             const background=document.getElementById('bg')
-            // console.log(background.classList)
+            
             background.classList.add('main2')
           }else{
 
