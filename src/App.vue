@@ -1,14 +1,9 @@
 <template>
-    
-
+<Login />
 </template>
 
-<script>
-
-
-    export default{
-
-    }
+<script setup>
+import Login from './Component/Login.vue'
 </script>
 
 <style>
