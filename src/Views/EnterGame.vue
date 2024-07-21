@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import WhiteScreen from '../Component/WhiteScreen.vue'
+import WhiteScreen from '../components/WhiteScreen.vue'
 import enterTwo from './enterGame/enterTwo.vue'
 import enterOne from './enterGame/enterOne.vue'
 import {ref,reactive} from 'vue'
@@ -27,14 +27,14 @@ export default {
         });
         
         function next(){
-          console.log(isShow)
+          // console.log(isShow)
           pageNumer++;
           console.log(pageNumer)
           if(pageNumer<=2){
             isShow.One=!isShow.One
             isShow.Two=!isShow.Two
             const background=document.getElementById('bg')
-            console.log(background.classList)
+            // console.log(background.classList)
             background.classList.add('main2')
           }else{
 
@@ -65,10 +65,14 @@ export default {
         background: url(../assets/house.jpg);
         background-size: cover;
         background-repeat: no-repeat;
+        background-position:  center center;
 
     }
     .main2{
       background: url(../assets/library.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position:  center center;
     }
     /* 根据视口宽度判断设备 */
 @media (max-width: 768px) {
