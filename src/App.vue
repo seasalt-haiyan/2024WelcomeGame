@@ -4,9 +4,8 @@
 </template>
 
 <script>
-    import WhiteScreen from '../components/WhiteScreen.vue';
-    import EnterGame from './Views/EnterGame.vue';
-
+    import WhiteScreen from './Component/WhiteScreen.vue';
+    import EnterGame from './Views/EnterGame.vue'
     export default{
         components:{
             WhiteScreen,
