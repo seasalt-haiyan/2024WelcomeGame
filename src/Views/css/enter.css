@@ -6,13 +6,28 @@ div {
 
 }
 
+input{
+    font-size: 45px;
+        width: 250px;
+        border: none;
+        border-bottom: 2px solid #000;
+        background: transparent;
+        padding: 5px 10px;
+        outline: none;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
 @media (max-width: 768px) {
 
     /* 手机设备的样式 */
     div {
         font-size: 45;
         line-height: 1.5;
-        overflow: scroll;
+        overflow: auto;
     }
 
 }

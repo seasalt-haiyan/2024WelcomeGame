@@ -1,9 +1,9 @@
 <template>
-<Login />
+<Cquestion/>
 </template>
 
 <script setup>
-import Login from './Component/Login.vue'
+import Cquestion from './Views/Cquestion.vue';
 </script>
 
 <style>
