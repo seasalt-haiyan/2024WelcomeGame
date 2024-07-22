@@ -15,8 +15,9 @@
 
 <script setup>
 import { ref } from 'vue';
-import  axios  from 'axios';
+import  instance  from '../http';
 import { useRouter } from 'vue-router';
+
 
 const name = ref('');
 const studentId = ref('');
@@ -27,14 +28,22 @@ const submitForm = ()=>{
         name: name.value,
         studentId: studentId.value
     };
-    axios.post('http://127.0.0.1:4523/m1/4859235-4514837-default/sipc/user/login', formData).then((res)=>{
+    // axios.post('http://127.0.0.1:4523/m1/4859235-4514837-default/sipc/user/login', formData).then((res)=>{
+    //     console.log(res);
+    //     if(res.status === 200 ){
+    //         router.push('/entergame');
+    //     }
+    // }).catch((err)=>{
+    //     console.log(err);
+    // }); 
+    instance.post('/sipc/user/login', formData).then((res)=>{
         console.log(res);
         if(res.status === 200 ){
             router.push('/entergame');
         }
     }).catch((err)=>{
-        console.log(err);
-    }); 
+        alert('请检查姓名和学号是否正确');
+    });
 }
 
 </script>

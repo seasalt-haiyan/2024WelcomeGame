@@ -47,6 +47,7 @@ export default {
     }
     .v {
         padding: 5px;
+        cursor: pointer;
     }
     .login {
         width: 100px;
@@ -65,5 +66,6 @@ export default {
         margin: 10px;
         padding: 10px;
         border-radius: 10px;
+        cursor: pointer;
     }
 </style>

@@ -30,6 +30,7 @@ import AnQuan2 from "@/Components/questions/AnQuan2.vue";
 import AnQuan3 from "@/Components/questions/AnQuan3.vue";
 import AnQuan4 from "@/Components/questions/AnQuan4.vue";
 import AnQuan5 from "@/Components/questions/AnQuan5.vue";
+import divideClassEnter from "../Components/questions/divideClassEnter.vue";
 import EndL from "@/Components/EndL.vue";
 const router = createRouter({
     history: createWebHashHistory(),
@@ -163,6 +164,9 @@ const router = createRouter({
           {
             path:'/end',
             component:EndL
+          },{
+            path:'/divideClassEnter',
+            component:divideClassEnter
           }
     ]
 })
