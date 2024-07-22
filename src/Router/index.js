@@ -5,33 +5,58 @@ import Cquestion from "@/Views/Cquestion.vue";
 import Cquestion2 from "@/Views/Cquestion2.vue";
 import divideClass from "@/Components/DivideClass.vue";
 import Front from "@/Components/questions/front.vue";
-const router=createRouter({
+import AnQuan1 from "@/Components/questions/AnQuan1.vue";
+import AnQuan2 from "@/Components/questions/AnQuan2.vue";
+import AnQuan3 from "@/Components/questions/AnQuan3.vue";
+import AnQuan4 from "@/Components/questions/AnQuan4.vue";
+import AnQuan5 from "@/Components/questions/AnQuan5.vue";
+const router = createRouter({
     history: createWebHashHistory(),
-    routes:[
+    routes: [
         {
-            path:'/entergame',
-            component:EnterGame
+            path: '/entergame',
+            component: EnterGame
         },
         {
-            path:'/',
-            component:Login
+            path: '/',
+            component: Login
         },
         {
-            path:'/Cquestion',
-            component:Cquestion
+            path: '/Cquestion',
+            component: Cquestion
         },
         {
-            path:'/Cquestion2',
-            component:Cquestion2
+            path: '/Cquestion2',
+            component: Cquestion2
         },
         {
-            path:'/divideClass',
-            component:divideClass
+            path: '/divideClass',
+            component: divideClass
         },
         {
-            path:'/front/question1',
-            component:Front
-        }
+            path: '/front/question1',
+            component: Front
+        },
+        {
+            path: '/safe/question1',
+            component: AnQuan1
+        },
+        {
+            path: '/safe/question2',
+            component: AnQuan2
+        },
+        {
+            path: '/safe/question3',
+            component: AnQuan3
+        },
+        {
+            path: '/safe/question4',
+            component: AnQuan4
+        },
+        {
+            path: '/safe/question5',
+            component: AnQuan5
+        },
     ]
 })
 
