@@ -27,6 +27,8 @@
         </div>
       <span class="answer">答案是：<input type="text" v-model="answer"></span>
   </WhiteScreen>
+  <littleBear/>
+  <littleLog/>
   <button  class="submit" @click="sumbit">
     提交
   </button>
@@ -36,6 +38,8 @@ import axios from 'axios';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import WhiteScreen from '../WhiteScreen.vue';
+import littleBear from '../../Components/littleBear.vue';
+  import littleLog from '../../Components/littleLog.vue';
 
 
 let answer = ref('');

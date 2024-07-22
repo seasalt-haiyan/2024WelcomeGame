@@ -11,6 +11,8 @@
         <span class="answer">答案是：<input type="text" v-model="answer"></span>
         <p>你费尽千辛万苦终于抵达了前端学院，那里有许多学长学姐，这一路上遇到的海燕，派大星，坏家伙，大老虎竟都在其中，好吧也许确实很坑，很累，但他们其实一直都在你身边，经过这一路，魔法书已经在你的手中，所以，欢迎选择前端！！</p>
     </WhiteScreen>
+    <littleBear/>
+    <littleLog/>
     <button  class="submit" @click="sumbit">
         提交
     </button>    
@@ -18,6 +20,8 @@
         
     <script setup>
     import WhiteScreen from '@/Components/WhiteScreen.vue';
+    import littleBear from '../../Components/littleBear.vue';
+  import littleLog from '../../Components/littleLog.vue';
         import { ref } from 'vue';
         let answer = ref('');        
         const sumbit = ()=>{

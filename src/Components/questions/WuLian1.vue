@@ -50,6 +50,8 @@
     <p>请写出对应设置的值:(依次写入)</p>
       <span class="answer">答案是：<input type="text" v-model="answer"></span>
   </WhiteScreen>
+  <littleBear/>
+  <littleLog/>
   <button  class="submit" @click="sumbit">
     提交
   </button>
@@ -60,6 +62,8 @@
     
     <script setup>
   import WhiteScreen from '@/Components/WhiteScreen.vue';
+  import littleBear from '../../Components/littleBear.vue';
+  import littleLog from '../../Components/littleLog.vue';
       import { ref } from 'vue';
       let answer = ref('');
       

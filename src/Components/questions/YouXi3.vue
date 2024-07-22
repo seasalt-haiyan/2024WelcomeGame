@@ -7,6 +7,8 @@
         <span class="answer">答案是：<input type="text" v-model="answer"></span>
         <p>在游戏的Unity上，你已经走到了术之尽头，现在你可以尝试去选择其他的方向来提升自我了。</p>
     </WhiteScreen>
+    <littleBear/>
+    <littleLog/>
     <button  class="submit" @click="sumbit">
         提交
     </button>    
@@ -14,6 +16,8 @@
         
     <script setup>
     import WhiteScreen from '@/Components/WhiteScreen.vue';
+    import littleBear from '../../Components/littleBear.vue';
+  import littleLog from '../../Components/littleLog.vue';
         import { ref } from 'vue';
         let answer = ref('');        
         const sumbit = ()=>{
