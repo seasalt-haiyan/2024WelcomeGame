@@ -10,9 +10,12 @@ import WhiteScreen from '../Components/WhiteScreen.vue'
 import enterTwo from './enterGame/enterTwo.vue'
 import enterOne from './enterGame/enterOne.vue'
 import {ref,reactive} from 'vue'
+import { useRouter } from 'vue-router';
+
 
 
 export default {
+  
     name:'EnterGame',
     components:{
         WhiteScreen,
@@ -20,6 +23,7 @@ export default {
         enterTwo
     },
     setup() {
+        const router = useRouter();
         let pageNumer=1;
         let isShow=reactive({
           One:true,
@@ -29,7 +33,6 @@ export default {
         function next(){
           // console.log(isShow)
           pageNumer++;
-          console.log(pageNumer)
           if(pageNumer<=2){
             isShow.One=!isShow.One
             isShow.Two=!isShow.Two
@@ -37,7 +40,7 @@ export default {
             
             background.classList.add('main2')
           }else{
-
+            router.push('/Cquestion')
           }
         }
         return {
@@ -50,13 +53,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
       .next {
         color:white;
         font-size: 40;
         position: absolute;
         left: 80%;
-        top:75%;
+        top:80%;
       }
     .main1 {
         width: 100vw;
@@ -75,14 +78,5 @@ export default {
       background-position:  center center;
     }
     /* 根据视口宽度判断设备 */
-@media (max-width: 768px) {
-  /* 手机设备的样式 */
- 
-}
-
-@media (min-width: 769px) {
-  /* 电脑设备的样式 */
- 
-}
 
 </style>

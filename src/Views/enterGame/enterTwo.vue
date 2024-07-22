@@ -14,7 +14,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @import '../css/enter.css';
 div {
     font-size: 55;

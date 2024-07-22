@@ -27,7 +27,7 @@ input{
     div {
         font-size: 45;
         line-height: 1.5;
-        overflow: auto;
+        overflow: scroll;
     }
 
 }
