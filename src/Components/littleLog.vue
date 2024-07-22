@@ -27,6 +27,9 @@ export default {
 
 <style scoped>
 .loginout {
+    position: absolute;
+    top: 6vh;
+    right: 13vw;
     display: flex;
     width: 150px;
     flex-direction: column;
@@ -47,7 +50,8 @@ export default {
     }
     .login {
         width: 100px;
-        color: #FEFBFB;
+        color: grey;
+        font-weight: bold;
         font-size: 32;
     }
     .logout {

@@ -22,7 +22,9 @@ import seperateQuestions from './seperateQuestions.vue'
           seperateQuestions
       },
       setup() {
-
+        function next(){
+            console.log('a')
+          }
           return {
            
       }

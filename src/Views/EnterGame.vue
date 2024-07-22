@@ -59,7 +59,7 @@ export default {
         font-size: 40;
         position: absolute;
         left: 80%;
-        top:75%;
+        top:80%;
       }
     .main1 {
         width: 100vw;

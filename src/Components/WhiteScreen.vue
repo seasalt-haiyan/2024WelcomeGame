@@ -22,5 +22,6 @@ export default {
       border-radius: 5%;
       background-color:rgba(255,255,255, 70%);
       padding: 5%;
+      overflow:auto;
     }
 </style>

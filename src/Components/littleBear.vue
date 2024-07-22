@@ -21,8 +21,10 @@ export default {
 
 <style scoped>
 .bear {
-    position: relative;
-    width: 180px;
+
+    position: absolute;
+    top: 6vh;
+    left: 13vw;
 }
     img {
         position: absolute;

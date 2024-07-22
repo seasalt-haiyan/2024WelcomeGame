@@ -3,6 +3,8 @@ import EnterGame from "@/Views/EnterGame.vue";
 import Login from "../Components/Login.vue";
 import Cquestion from "@/Views/Cquestion.vue";
 import Cquestion2 from "@/Views/Cquestion2.vue";
+import divideClass from "@/Components/DivideClass.vue";
+import Front from "@/Components/questions/front.vue";
 const router=createRouter({
     history: createWebHashHistory(),
     routes:[
@@ -21,6 +23,14 @@ const router=createRouter({
         {
             path:'/Cquestion2',
             component:Cquestion2
+        },
+        {
+            path:'/divideClass',
+            component:divideClass
+        },
+        {
+            path:'/front/question1',
+            component:Front
         }
     ]
 })
