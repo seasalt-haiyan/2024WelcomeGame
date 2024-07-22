@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .loginout {
     display: flex;
     width: 150px;

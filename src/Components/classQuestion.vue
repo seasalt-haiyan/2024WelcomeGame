@@ -31,7 +31,7 @@ import seperateQuestions from './seperateQuestions.vue'
 }
   </script>
   
-  <style>
+  <style scoped>
   * {
     padding: 0;
     margin: 0;

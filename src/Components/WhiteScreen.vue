@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .WhiteScreen {
       box-sizing: border-box;
       position: absolute;
