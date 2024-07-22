@@ -1,18 +1,62 @@
 <template>
+    <div class="background"></div>
+  <WhiteScreen >
     <div>
         <p>又到了一年一度的迎新季，Welcome to Backend！在这个充满魔力与科技的 SIPC 学院，你被学长带到了后端学院，这里弥漫着智慧的气息，学长告诉你，想要加入后端学院，提升自己对抗 Cyrus 的神秘力量，首先需要学会如何灵活使用学院的图书馆。</p>
         <p>  你抬头望去，发现这里的书本成千上万，书架排列得像无尽的迷宫，一眼望不到头。这些书本皆被一个庞大的数据库管理，它们蕴含着从古至今的知识和智慧。想要正确地查找到自己想要的知识，你需要学会如何操作数据库——这是后端学院的基础技能之一。</p>
         <p>  学长微笑着看着你，递给你一本厚重的手册，上面写满了各种复杂的指令和符号。他告诉你，掌握这些，你将能够召唤出任何你需要的知识。他问：“想要在这个知识的海洋中遨游，你知道我们需要用什么语言来操作数据库吗？”</p>
-    
     </div>
-</template>
+      <span class="answer">答案是：<input type="text" v-model="answer"></span>
+  </WhiteScreen>
+  <button  class="submit" @click="sumbit">
+    提交
+  </button>
+  
+  
+  
+  </template>
     
-    <script>
-    export default {
-    
-    }
+    <script setup>
+  import WhiteScreen from '@/Components/WhiteScreen.vue';
+      import { ref } from 'vue';
+      let answer = ref('');
+      
+      const sumbit = ()=>{
+        // axiox.post
+        console.log('111');
+      }
     </script>
     
-    <style>
-    
+    <style scoped>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .background{
+      width: 100%;
+      height: 100vh; /* 确保背景高度覆盖整个视口 */
+      background: url('../../assest/hall.jpg') no-repeat center center; /* 居中显示背景图片 */
+      background-size: cover; /* 确保背景图片覆盖整个容器 */
+      opacity: 0.7; /* 设置背景图片透明度 */
+    }
+    input{
+      font-size: 45px;
+          width: 250px;
+          border: none;
+          border-bottom: 2px solid #000;
+          background: transparent;
+          padding: 5px 10px;
+          outline: none;
+    }
+    .submit{
+      width: 200px;
+      height: 50px;
+      background: #907D6F;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom:10vh;
+      border-radius: 10px;
+      cursor: pointer;
+    }
     </style>

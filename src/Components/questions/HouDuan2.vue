@@ -1,4 +1,6 @@
 <template>
+    <div class="background"></div>
+  <WhiteScreen >
     <div>
         <p>学长的眼中闪过赞许的光芒，他微微点头，似乎对你的回答感到满意。突然，他从手中抛出一个令牌，这个令牌在空中划过一道弧线，稳稳落在你的掌心。你定睛一看，这个令牌非同寻常，上面镌刻着一个 4 乘 4 的神秘表格，每个格子里都有一个字母，看似杂乱无章，却暗藏玄机。</p>
         <img src="./imgs/houduan2-1.png" alt="">
@@ -8,14 +10,57 @@
         <p>你深呼吸，将令牌紧紧握在手心，心中开始构思解决方案。你明白，这个表格的排序规则是按照ASCII码排序的,每一行都是固定在一起的,即按照一列排序后,其他列的元素也会跟着变动,当某行的位置发生改变时,其他行的相对位置不会发生改变,即把第二行变为第四行时,不是直接把第二行和第四行交换,而是把原来的三,四行改为二,三行,原来的第二行改为第四行,当同时多列进行排列时,只有前一列排序后对应列的元素相同的行才会继续参与下一列的排序,如第一行升序排列后S位于了第四行,前三行都为A,那么对下一列排序时就只有前三行会参与,以此类推,你需要按照"3升,4降,1升"(先按第三列升序排列,再按第四列进行降序排列,最后按第一列升序排列)这样的格式回答,排列次数不应大于三次.</p>
         <p>你闭上眼睛，让思维在字母的海洋中自由翱翔。当你再次睁开眼睛，你已经有了答案。</p>
     </div>
-</template>
+      <span class="answer">答案是：<input type="text" v-model="answer"></span>
+  </WhiteScreen>
+  <button  class="submit" @click="sumbit">
+    提交
+  </button>
+  
+  
+  
+  </template>
     
-    <script>
-    export default {
-    
-    }
+    <script setup>
+  import WhiteScreen from '@/Components/WhiteScreen.vue';
+      import { ref } from 'vue';
+      let answer = ref('');
+      
+      const sumbit = ()=>{
+        // axiox.post
+        console.log('111');
+      }
     </script>
     
-    <style>
-    
+    <style scoped>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .background{
+      width: 100%;
+      height: 100vh; /* 确保背景高度覆盖整个视口 */
+      background: url('../../assest/hall.jpg') no-repeat center center; /* 居中显示背景图片 */
+      background-size: cover; /* 确保背景图片覆盖整个容器 */
+      opacity: 0.7; /* 设置背景图片透明度 */
+    }
+    input{
+      font-size: 45px;
+          width: 250px;
+          border: none;
+          border-bottom: 2px solid #000;
+          background: transparent;
+          padding: 5px 10px;
+          outline: none;
+    }
+    .submit{
+      width: 200px;
+      height: 50px;
+      background: #907D6F;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom:10vh;
+      border-radius: 10px;
+      cursor: pointer;
+    }
     </style>
