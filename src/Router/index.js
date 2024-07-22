@@ -25,8 +25,12 @@ import ChanPin3 from "@/Components/questions/ChanPin3.vue";
 import WuLian1 from "@/Components/questions/WuLian1.vue";
 import WuLian3 from "@/Components/questions/WuLian3.vue";
 import WuLian2 from "@/Components/questions/WuLian2.vue";
+import AnQuan1 from "@/Components/questions/AnQuan1.vue";
+import AnQuan2 from "@/Components/questions/AnQuan2.vue";
+import AnQuan3 from "@/Components/questions/AnQuan3.vue";
+import AnQuan4 from "@/Components/questions/AnQuan4.vue";
+import AnQuan5 from "@/Components/questions/AnQuan5.vue";
 const router = createRouter({
-\
     history: createWebHashHistory(),
     routes: [
         {
@@ -133,7 +137,28 @@ const router = createRouter({
             path: '/lot/question3',
             component: WuLian3
 
+
         },
+       {
+            path: '/safe/question1',
+            component: AnQuan1
+        },
+        {
+            path: '/safe/question2',
+            component: AnQuan2
+        },
+        {
+            path: '/safe/question3',
+            component: AnQuan3
+        },
+        {
+            path: '/safe/question4',
+            component: AnQuan4
+        },
+        {
+            path: '/safe/question5',
+            component: AnQuan5
+          }
     ]
 })
 
