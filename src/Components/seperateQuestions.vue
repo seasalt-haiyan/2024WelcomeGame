@@ -1,8 +1,7 @@
 <template>
   <div class="question">
     <slot></slot>
-    <!-- <span>答案是:</span><input type="text" v-model="answer" class="in"> -->
-    <!-- <hr> -->
+    
   </div>
 </template>
 
