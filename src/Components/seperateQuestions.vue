@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     hr {
         margin:  0% 10% ;
         border-width: 1px; /* 分隔线的宽度 */
