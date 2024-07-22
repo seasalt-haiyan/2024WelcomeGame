@@ -1,8 +1,8 @@
 <template>
   <div class="question">
     <slot></slot>
-    <span>答案是:</span><input type="text" v-model="answer.value" class="in">
-    <hr>
+    <!-- <span>答案是:</span><input type="text" v-model="answer" class="in"> -->
+    <!-- <hr> -->
   </div>
 </template>
 
@@ -37,11 +37,11 @@ export default {
     .question {
         width: 100%;
         height: 100%;
-        overflow-y: scroll;
+        overflow-y: auto;
         font-family: Arial, Helvetica, sans-serif;
-    color: black;
-    font-size: 45;
-    line-height: 1.5;
+        color: black;
+        font-size: 45;
+        line-height: 1.5;
        
     }
     @media (max-width: 768px) {

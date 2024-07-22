@@ -63,15 +63,6 @@ import seperateQuestions from './seperateQuestions.vue'
   
       }
 
-      /* 根据视口宽度判断设备 */
-  @media (max-width: 768px) {
-    /* 手机设备的样式 */
-   
-  }
-  
-  @media (min-width: 769px) {
-    /* 电脑设备的样式 */
-   
-  }
+ 
   
   </style>

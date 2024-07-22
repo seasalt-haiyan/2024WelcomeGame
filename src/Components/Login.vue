@@ -15,16 +15,28 @@
 
 <script setup>
 import { ref } from 'vue';
+import  axios  from 'axios';
+import { useRouter } from 'vue-router';
 
 const name = ref('');
 const studentId = ref('');
+const router = useRouter();
 
-const submitForm =()=>{
+const submitForm = ()=>{
     const formData = {
         name: name.value,
         studentId: studentId.value
     };
+    axios.post('http://127.0.0.1:4523/m1/4859235-4514837-default/sipc/user/login', formData).then((res)=>{
+        console.log(res);
+        if(res.status === 200 ){
+            router.push('/entergame');
+        }
+    }).catch((err)=>{
+        console.log(err);
+    }); 
 }
+
 </script>
 
 <style>
