@@ -32,11 +32,11 @@
       const sumbit = ()=>{
         // axiox.post
         const obj = {
-            answer: answer.value
+            answer: answer.value.toUpperCase()
         }
         /*console.log('111');*/
         instance.post('/sipc/backend/first', obj).then((res)=>{
-        //console.log(obj);
+        // console.log(obj);
         //console.log(res);
         if(res.code === "200" ){
             router.push('/back/question2');

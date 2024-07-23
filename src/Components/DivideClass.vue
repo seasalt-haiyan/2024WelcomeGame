@@ -50,7 +50,7 @@ const submitClass = (classChoose) => {
     }
       instance.post('/sipc/user/college', body).then((res)=>{
         // console.log(body);
-        // console.log(res);
+        console.log(res);
         
         if(res.code === "200" ){
             switch(res.data.page){
@@ -99,7 +99,7 @@ const submitClass = (classChoose) => {
                 case 'AlgorithmQuestion3':
                     router.push('/acm/question3');
                     break;
-                case 'SecureStart':
+                case 'SecurityStart':
                     router.push('/safe/question1');
                     break;
                 case 'SecureQuestion1':
