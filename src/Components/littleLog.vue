@@ -7,14 +7,17 @@
 
 <script>
 import {ref} from 'vue'
+import { useRouter } from 'vue-router';
 export default {
     setup(){
         let isShow=ref(false)
+        const router = useRouter();
         function logOutCome(){
             isShow.value=!isShow.value
         }
         function logOut(){
-            console.log('logout')
+            localStorage.removeItem('token');
+            router.push('/');
         }
         return {
             isShow,
@@ -47,6 +50,7 @@ export default {
     }
     .v {
         padding: 5px;
+        cursor: pointer;
     }
     .login {
         width: 100px;
@@ -65,5 +69,6 @@ export default {
         margin: 10px;
         padding: 10px;
         border-radius: 10px;
+        cursor: pointer;
     }
 </style>

@@ -16,8 +16,10 @@
   </WhiteScreen>
   <littleBear/>
   <littleLog/>
+
   <CommonError v-if="error"/>
   <button  class="submit" @click="submit">
+
     提交
   </button>
   
@@ -27,6 +29,8 @@
     
     <script setup>
   import WhiteScreen from '@/Components/WhiteScreen.vue';
+  import littleBear from '../../Components/littleBear.vue';
+  import littleLog from '../../Components/littleLog.vue';
       import { ref } from 'vue';
       import CommonError from '../CommonError.vue';
 import  instance  from '../../http';

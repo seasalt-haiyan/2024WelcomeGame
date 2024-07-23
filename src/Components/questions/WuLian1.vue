@@ -52,8 +52,10 @@
   </WhiteScreen>
   <littleBear/>
   <littleLog/>
+
   <CommonError v-if="error"/>
   <button  class="submit" @click="submit">
+
     提交
   </button>
   
@@ -65,10 +67,12 @@
   import WhiteScreen from '@/Components/WhiteScreen.vue';
   import littleBear from '../../Components/littleBear.vue';
   import littleLog from '../../Components/littleLog.vue';
+
  import { ref } from 'vue';
 import CommonError from '../CommonError.vue';
 import  instance  from '../../http';
 import { useRouter } from 'vue-router';
+
       let answer = ref('');
       const router=useRouter()
       let error = ref(false);

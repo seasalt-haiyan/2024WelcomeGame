@@ -6,15 +6,18 @@
 </template>
 
 <script setup>
+
 import {ref,onMounted} from 'vue'
 import { defineProps } from 'vue'
 import instance from '../Router/';
+
         defineProps({
             num:{
                 type:Number,
             }
         })
         // console.log(num)
+
         // let totalNum=ref(0);
 
         // onMounted(()=>{
@@ -23,6 +26,9 @@ import instance from '../Router/';
         //     })
   
         // })
+
+
+
 </script>
 
 <style scoped>

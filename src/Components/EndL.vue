@@ -7,20 +7,23 @@
             经过一场惊心动魄的激战，你们终于成功地消灭了 Cyrus，拯救了整个世界。世界的边陲重新恢复了往日的生机与繁荣，被摧毁的小镇也得以重建，你也终于解开了多年的心结。你重新回到了 SIPC 学院，将自己的经验和知识传授给学弟学妹们，培养出更多有能力守护世界的勇士。<br>
         </div>
         <button class="button1" @click="end">游戏结束</button>
-        <button class="button2" @click="middleEnd">回到分院{{ num }}/7</button>
+        <button class="button2" @click="middleEnd">回到分院</button>
     </div>
     
 </template>
 
 <script setup name="EndL">
 import {onMounted, ref} from "vue";
+import { useRouter } from 'vue-router';
 let num = ref(1);
 const myElement = ref(null);
+const router = useRouter();
 function end(){
-    console.log(111);
+    localStorage.removeItem('token');
+    router.push('/');
 }
 function middleEnd(){
-    console.log(222);
+    router.push('/divideClass');
     
 }
 onMounted(() => {

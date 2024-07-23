@@ -15,11 +15,11 @@
       <span class="answer">答案是：<input type="text" v-model="answer"></span>
   </WhiteScreen>
 
+
   <littleBear/>
   <littleLog/>
   <CommonError v-if="error"/>
   <button  class="submit" @click="submit">
-
     提交
   </button>
   
@@ -29,6 +29,7 @@
     
     <script setup>
   import WhiteScreen from '@/Components/WhiteScreen.vue';
+
 
   import littleBear from '../../Components/littleBear.vue';
   import littleLog from '../../Components/littleLog.vue';

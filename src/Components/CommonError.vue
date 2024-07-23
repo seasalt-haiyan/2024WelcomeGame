@@ -1,7 +1,5 @@
 <template>
-    <div class="background">
-      <!-- 后期要删 -->
-      <WhiteScreen></WhiteScreen>
+    <div>
       <div class="back">
   
       </div>
@@ -14,7 +12,6 @@
     </div>
   </template>
   <script setup>
-  import WhiteScreen from "./WhiteScreen.vue";
   </script>
   
   <style scoped>
@@ -31,10 +28,13 @@
   
   }
   .back{
+    position:absolute;
       width: 100vw;
       height: 100vh;
-      background-color: white;
-      opacity: 50%;
+      top: 0;
+      left: 0;
+      background-color: grey;
+      opacity: 0.7;
   }
   .chara{
       display: flex;

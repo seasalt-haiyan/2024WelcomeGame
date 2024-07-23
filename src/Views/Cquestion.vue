@@ -1,12 +1,12 @@
 <template>
   <div class="background"></div>
-<littleBear/>
+<littleBear :num="0"/>
 <littleLog/>
 <WhiteScreen >
     <p>你到达了传说中的SIPC学院，它坐落于赛罗米尔的山谷，收到这所学院的录取通知书代表你有守护世界的潜力，你是坚毅勇敢的化身。。在这个学校，入学第一件事就是找到自己的向导，你的向导是一只考拉，聪明的你很快就发现你可以用一种奇妙的语言和考拉交流，你像是生来就有这样的潜力。</p>
     <br>
     <br>
-    <p>试着和自己的向导小考拉打招呼吧~（补全下面的代码输出“hello，kaola”）</p>
+    <p>试着和自己的向导小考拉打招呼吧~（补全下面的代码输出“hello,kaola”）</p>
     <p>#include&lt;stdio.h &gt;</p>
     <p>int main()</p>
     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</p>
@@ -15,7 +15,8 @@
     <p>&nbsp;&nbsp;}</p>
     <span class="answer">答案是：<input type="text" v-model="answer"></span>
 </WhiteScreen>
-<button  class="submit" @click="sumbit">
+<CommonError v-if="error"/>
+<button  class="submit" @click="submit">
   提交
 </button>
 
@@ -27,12 +28,29 @@
 import WhiteScreen from '@/Components/WhiteScreen.vue';
 import littleBear from '@/Components/littleBear.vue';
 import littleLog from '@/Components/littleLog.vue';
+import CommonError from '@/Components/CommonError.vue';
+import { useRouter } from 'vue-router';
+import instance from '../http';
     import { ref } from 'vue';
     let answer = ref('');
-    
-    const sumbit = ()=>{
-      // axiox.post
-      console.log('111');
+    let error = ref(false);
+    const router = useRouter();
+
+    const submit = ()=>{
+      const body = {
+      answer: answer.value
+    }
+      instance.post('/sipc/main/first', body).then((res)=>{
+        if(res.code === "200" ){
+            router.push('/Cquestion2');
+        }else if(res.code === "400"){
+          error.value = true;
+          setTimeout(()=>{
+            error.value = false;
+          },3000)
+        }
+    }
+  )
     }
   </script>
   
