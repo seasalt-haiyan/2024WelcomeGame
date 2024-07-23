@@ -12,7 +12,8 @@
   </WhiteScreen>
   <littleBear/>
   <littleLog/>
-  <button  class="submit" @click="sumbit">
+  <CommonError v-if="error"/>
+  <button  class="submit" @click="submit">
     提交
   </button>
    
@@ -20,26 +21,35 @@
     
 <script setup>
 import WhiteScreen from '../WhiteScreen.vue';
-import axios from 'axios';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import littleBear from '../../Components/littleBear.vue';
   import littleLog from '../../Components/littleLog.vue';
+  import CommonError from '../CommonError.vue';
+  import  instance  from '../../http';
 let answer = ref('');
-const router = useRouter();
+let error = ref(false);
+      const router = useRouter();
 const obj={
     answer:answer.value
 }
-const sumbit = ()=>{
-  axios.post('http://127.0.0.1:4523/m1/4859235-4514837-default/sipc/secure/fourth',obj).then((res)=>{
-    console.log(res);
-        if(res.status === 200 ){
-            router.push('/safe/question5');
+const submit = ()=>{
+        const obj = {
+            answer: answer.value
         }
-  }).catch((err)=>{
-    console.log(err);
-  })
-}
+      instance.post('/sipc/secure/fourth', obj).then((res)=>{
+        //  console.log(obj);
+        // console.log(res);
+        if(res.code === "200" ){
+            router.push('/safe/question5');
+        }else if(res.code === "400"){
+          error.value = true;
+          setTimeout(()=>{
+            error.value = false;
+          },3000)
+        }
+    })
+  }
 </script>
 
 <style scoped>
