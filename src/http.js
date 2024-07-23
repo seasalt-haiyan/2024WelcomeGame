@@ -2,7 +2,7 @@ import axios from 'axios';
 
 //创建axios实例
 const instance = axios.create({
-    baseURL: 'http://127.0.0.1:4523/m1/4859235-4514837-default',
+    baseURL: 'http://game.sipc115.com',
     timeout: 5000,
     // headers: {
     //     'Content-Type': 'application/json',

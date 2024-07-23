@@ -56,6 +56,10 @@ const router = createRouter({
             component: divideClass
         },
         {
+            path:'/divideClassEnter',
+            component:divideClassEnter
+        },
+        {
             path:'/front/question1',
             component:Front
         },
@@ -128,15 +132,15 @@ const router = createRouter({
             component: ChanPin3
         },
         {
-            path: '/lot/question1',
+            path: '/Iot/question1',
             component: WuLian1
         },
         {
-            path: '/lot/question2',
+            path: '/Iot/question2',
             component: WuLian2
         },
         {
-            path: '/lot/question3',
+            path: '/Iot/question3',
             component: WuLian3
 
 

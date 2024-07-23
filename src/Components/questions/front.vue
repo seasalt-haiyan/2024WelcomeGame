@@ -9,11 +9,13 @@
   </WhiteScreen>
   <littleBear/>
   <littleLog/>
-  <button  class="submit" @click="sumbit">
+  <CommonError v-if="error"/>
+
+  <button  class="submit" @click="submit">
     提交
   </button>
   
-  
+  <br/>
   
   </template>
     
@@ -21,17 +23,38 @@
   import WhiteScreen from '@/Components/WhiteScreen.vue';
   import littleBear from '../../Components/littleBear.vue';
   import littleLog from '../../Components/littleLog.vue';
+  import CommonError from '../CommonError.vue';
+  import  instance  from '../../http';
+import { useRouter } from 'vue-router';
       import { ref } from 'vue';
 
       let answer = ref('');
+      const router = useRouter();
+      let error = ref(false);
       
-      const sumbit = ()=>{
+      const submit = ()=>{
         // axiox.post
-        console.log('111');
-      }
+        const obj = {
+            answer: answer.value
+        }
+      instance.post('/sipc/frontend/first', obj).then((res)=>{
+        console.log(obj);
+        console.log(res);
+        if(res.code === "200" ){
+            router.push('/front/question2');
+        }else if(res.code === "400"){
+          error.value = true;
+          setTimeout(()=>{
+            error.value = false;
+          },3000)
+        }
+    })
+  }
+
     </script>
     
-    <style scoped>
+   <style scoped>
+
     * {
       padding: 0;
       margin: 0;

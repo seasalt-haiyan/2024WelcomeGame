@@ -7,14 +7,17 @@
 
 <script>
 import {ref} from 'vue'
+import { useRouter } from 'vue-router';
 export default {
     setup(){
         let isShow=ref(false)
+        const router = useRouter();
         function logOutCome(){
             isShow.value=!isShow.value
         }
         function logOut(){
-            console.log('logout')
+            localStorage.removeItem('token');
+            router.push('/');
         }
         return {
             isShow,

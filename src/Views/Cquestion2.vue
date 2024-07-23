@@ -1,6 +1,6 @@
 <template>
   <div class="background"></div>
-  <littleBear/>
+  <littleBear :num="1"/>
   <littleLog/>
 <WhiteScreen >
     <p>紧接着你从一旁的桉树上摘下一段带着鲜嫩叶子的桉树枝，递给了小考拉，考拉满意极了，领着你来到了分院礼堂。你听周围的同学们说，这个分院帽会给你出一道题，答对了这道题你就可以选择自己想去的学院。你心想“一定要试试，选一个适合自己的学院！”</p>
@@ -12,7 +12,8 @@
     <p>你想了想，大声喊出了分院咒语：_______!</p>
     <span class="answer">答案是：<input type="text" v-model="answer"></span>
 </WhiteScreen>
-<button  class="submit" @click="sumbit">
+<CommonError v-if="error"/>
+<button  class="submit" @click="submit">
   提交
 </button>
 
@@ -20,16 +21,36 @@
 
 </template>
   
-  <script setup>
+<script setup>
 import WhiteScreen from '@/Components/WhiteScreen.vue';
 import littleBear from '@/Components/littleBear.vue';
 import littleLog from '@/Components/littleLog.vue';
+import CommonError from '@/Components/CommonError.vue';
+import { useRouter } from 'vue-router';
+import instance from '../http';
     import { ref } from 'vue';
     let answer = ref('');
+    let error = ref(false);
+    const router = useRouter();
+
     
-    const sumbit = ()=>{
-      // axiox.post
-      console.log('111');
+    const submit = ()=>{
+      const body = {
+      answer: answer.value
+    }
+      instance.post('/sipc/main/second', body).then((res)=>{
+        if(res.code === "200" ){
+            router.push('/divideClass');
+        }else if(res.code === "400"){
+          error.value = true;
+          setTimeout(()=>{
+            error.value = false;
+          },3000)
+        }
+    }
+  ).catch((err)=>{
+      alert('请检查你的代码是否正确');
+  });
     }
   </script>
   

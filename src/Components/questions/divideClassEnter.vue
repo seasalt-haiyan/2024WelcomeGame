@@ -20,7 +20,8 @@
   import littleBear from '../../Components/littleBear.vue';
   import littleLog from '../../Components/littleLog.vue';
   import {ref,reactive} from 'vue'
-  import { useRouter } from 'vue-router';
+  import { useRoute,useRouter } from 'vue-router';
+  import instance from '../../http';
   
   
   
@@ -30,15 +31,40 @@
       components:{
           WhiteScreen,
           littleBear,
-            littleLog
+          littleLog
       },
       setup() {
-        let classChoose=ref('')//选择的学院
+        const route = useRoute();
+        const router = useRouter();
+        const classChoose = route.query.classChoose
           function next(){
-            //跳转方向第一题
+            switch(classChoose){
+              case 'Frontend':  
+              router.push('/front/question1');
+                break;
+              case 'Product':
+                router.push('/product/question1');
+                break;
+              case 'IoT':
+                 router.push('/Iot/question1');
+                break;
+              case 'Algorithm':
+                  router.push('/acm/question1');
+                break;
+              case 'Backend':
+                router.push('/back/question1');
+                break;
+              case 'Secure':
+                router.push('/safe/question1');
+                break;
+              case 'Game':
+                router.push('/game/question1');
+                break;
+            }
           }
           return {
             next,
+            classChoose
           }
       }
   

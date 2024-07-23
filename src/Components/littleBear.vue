@@ -5,18 +5,16 @@
   </span>
 </template>
 
-<script>
+<script setup>
 import {ref} from 'vue'
-export default {
-    setup(){
-        let num=ref(0)
-        console.log(num)
-        return {
-            num
-        }
-    }
+import { defineProps } from 'vue'
+        defineProps({
+            num:{
+                type:Number,
+            }
+        })
+        // console.log(num)
 
-}
 </script>
 
 <style scoped>
