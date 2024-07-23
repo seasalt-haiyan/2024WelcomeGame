@@ -6,14 +6,28 @@
 </template>
 
 <script setup>
-import {ref} from 'vue'
+
+import {ref,onMounted} from 'vue'
 import { defineProps } from 'vue'
+import instance from '../Router/';
+
         defineProps({
             num:{
                 type:Number,
             }
         })
         // console.log(num)
+
+        // let totalNum=ref(0);
+
+        // onMounted(()=>{
+        //     instance.get('/sipc/user/total').then((res)=>{
+        //         console.log(res);
+        //     })
+  
+        // })
+
+
 
 </script>
 
