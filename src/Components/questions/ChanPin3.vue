@@ -14,7 +14,10 @@
     </div>
       <span class="answer">答案是：<input type="text" v-model="answer"></span>
   </WhiteScreen>
-  <button  class="submit" @click="sumbit">
+  <littleBear/>
+  <littleLog/>
+  <CommonError v-if="error"/>
+  <button  class="submit" @click="submit">
     提交
   </button>
   
@@ -25,12 +28,30 @@
     <script setup>
   import WhiteScreen from '@/Components/WhiteScreen.vue';
       import { ref } from 'vue';
+      import CommonError from '../CommonError.vue';
+import  instance  from '../../http';
+import { useRouter } from 'vue-router';
       let answer = ref('');
-      
-      const sumbit = ()=>{
+      const router=useRouter()
+      let error = ref(false);
+      const submit = ()=>{
         // axiox.post
-        console.log('111');
-      }
+        const obj = {
+            answer: answer.value
+        }
+      instance.post('/sipc/product/third', obj).then((res)=>{
+        console.log(obj);
+        console.log(res);
+        if(res.code === "200" ){
+            router.push('/end');
+        }else if(res.code === "400"){
+          error.value = true;
+          setTimeout(()=>{
+            error.value = false;
+          },3000)
+        }
+    })
+  }
     </script>
     
     <style scoped>
