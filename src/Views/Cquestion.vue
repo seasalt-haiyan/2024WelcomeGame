@@ -1,6 +1,6 @@
 <template>
   <div class="background"></div>
-<littleBear :num="0"/>
+<littleBear/>
 <littleLog/>
 <WhiteScreen >
     <p>你到达了传说中的SIPC学院，它坐落于赛罗米尔的山谷，收到这所学院的录取通知书代表你有守护世界的潜力，你是坚毅勇敢的化身。。在这个学校，入学第一件事就是找到自己的向导，你的向导是一只考拉，聪明的你很快就发现你可以用一种奇妙的语言和考拉交流，你像是生来就有这样的潜力。</p>

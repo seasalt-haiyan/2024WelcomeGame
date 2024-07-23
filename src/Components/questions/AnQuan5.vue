@@ -2,7 +2,7 @@
      <div class="background"></div>
      <WhiteScreen>
         <div>
-        <p style="font-size: 45px;"><b>msic</b></p>
+        <p style="font-size: 45px;"><b>misc</b></p>
         <p>经历了这些, 你守护住了 SIPC, 抵御了 Cyrus 侵袭, 并且成长了很多, 在最后你需要配合警方找到幕后凶手, 由于犯罪团伙的违法行为, 警方开始了网上的溯源追踪, 根据警方的搜查, 截获了一段嫌疑人传输的密文:</p>
         <p>（密文放到最后了）</p>
         <p>与此同时, 警方还获取到了嫌疑人对接地点的图片</p>
@@ -16,33 +16,43 @@
   </WhiteScreen>
   <littleBear/>
   <littleLog/>
-  <button  class="submit" @click="sumbit">
+  <CommonError v-if="error"/>
+  <button  class="submit" @click="submit">
     提交
   </button>
 </template>
     
 <script setup>
 import WhiteScreen from '../WhiteScreen.vue';
-import axios from 'axios';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import littleBear from '../../Components/littleBear.vue';
   import littleLog from '../../Components/littleLog.vue';
+  import CommonError from '../CommonError.vue';
+  import  instance  from '../../http';
 let answer = ref('');
+let error = ref(false);
 const router = useRouter();
 const obj={
     answer:answer.value
 }
-const sumbit = ()=>{
-  axios.post('http://127.0.0.1:4523/m1/4859235-4514837-default/sipc/secure/fifth',obj).then((res)=>{
-    console.log(res);
-        if(res.status === 200 ){
-            router.push('/safe/question3');
+const submit = ()=>{
+        const obj = {
+            answer: answer.value
         }
-  }).catch((err)=>{
-    console.log(err);
-  })
-}
+      instance.post('/sipc/secure/fifth', obj).then((res)=>{
+         console.log(obj);
+        console.log(res);
+        if(res.code === "200" ){
+            router.push('/end');
+        }else if(res.code === "400"){
+          error.value = true;
+          setTimeout(()=>{
+            error.value = false;
+          },3000)
+        }
+    })
+  }
 </script>
 
 <style scoped>

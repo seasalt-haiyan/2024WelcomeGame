@@ -29,9 +29,9 @@ function middleEnd(){
 onMounted(() => {
     if(navigator.userAgent.match(/Mobile/i)) {
         // 移动设备
-            console.log("mobile");  
+            // console.log("mobile");  
             myElement.value.style.fontSize = "2vh";
-            console.log(myElement.value.style);
+            // console.log(myElement.value.style);
         }
 })
 </script>

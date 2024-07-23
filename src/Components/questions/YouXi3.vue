@@ -9,21 +9,40 @@
     </WhiteScreen>
     <littleBear/>
     <littleLog/>
-    <button  class="submit" @click="sumbit">
+    <CommonError v-if="error"/>
+    <button  class="submit" @click="submit">
         提交
     </button>    
     </template>
         
     <script setup>
+    import CommonError from '../CommonError.vue';
+  import  instance  from '../../http';
+  import { useRouter } from 'vue-router';
     import WhiteScreen from '@/Components/WhiteScreen.vue';
     import littleBear from '../../Components/littleBear.vue';
   import littleLog from '../../Components/littleLog.vue';
         import { ref } from 'vue';
+        let error = ref(false);
         let answer = ref('');        
-        const sumbit = ()=>{
-            // axiox.post
-            console.log('111');
-          }
+        const router = useRouter();       
+        const submit = ()=>{
+        const obj = {
+            answer: answer.value
+        }
+      instance.post('/sipc/game/third', obj).then((res)=>{
+        //  console.log(obj);
+        // console.log(res);
+        if(res.code === "200" ){
+            router.push('/end');
+        }else if(res.code === "400"){
+          error.value = true;
+          setTimeout(()=>{
+            error.value = false;
+          },3000)
+        }
+    })
+  }
         </script>
         
         <style scoped>
