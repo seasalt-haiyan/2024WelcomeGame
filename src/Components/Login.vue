@@ -29,8 +29,10 @@ const submitForm = ()=>{
         studentId: studentId.value
     };
     instance.post('/sipc/user/login', formData).then((res)=>{
+        console.log(res);
         if(res.code === "200" ){
             localStorage.setItem('token',res.data.token);
+            
             // console.log(res.data.page);
             switch(res.data.page){
                 case 'StartPage1':
@@ -43,7 +45,11 @@ const submitForm = ()=>{
                     router.push('/divideClass');
             }
         }
+        else if(res.code === "400"){
+            alert('请检查姓名和学号是否正确');
+        }
     }).catch((err)=>{
+        
         alert('请检查姓名和学号是否正确');
     });
 }

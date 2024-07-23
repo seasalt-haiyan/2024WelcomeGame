@@ -50,7 +50,7 @@ const submitClass = (classChoose) => {
     }
       instance.post('/sipc/user/college', body).then((res)=>{
         // console.log(body);
-        // console.log(res);
+        console.log(res);
         
         if(res.code === "200" ){
             switch(res.data.page){
