@@ -37,7 +37,7 @@ const submitForm = ()=>{
     //     console.log(err);
     // }); 
     instance.post('/sipc/user/login', formData).then((res)=>{
-        console.log(res);
+        // console.log(res);
         if(res.code === "200" ){
             localStorage.setItem('token',res.data.token);
             router.push('/entergame');

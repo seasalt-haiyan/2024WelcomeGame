@@ -1,6 +1,6 @@
 <template>
   <div class="background"></div>
-  <littleBear :num="1"/>
+  <littleBear/>
   <littleLog/>
 <WhiteScreen >
     <p>紧接着你从一旁的桉树上摘下一段带着鲜嫩叶子的桉树枝，递给了小考拉，考拉满意极了，领着你来到了分院礼堂。你听周围的同学们说，这个分院帽会给你出一道题，答对了这道题你就可以选择自己想去的学院。你心想“一定要试试，选一个适合自己的学院！”</p>

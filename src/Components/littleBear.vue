@@ -6,15 +6,26 @@
 </template>
 
 <script setup>
-import {ref} from 'vue'
+import instance from '@/http'
+import {onMounted, ref} from 'vue'
 import { defineProps } from 'vue'
-        defineProps({
-            num:{
-                type:Number,
-            }
-        })
-        // console.log(num)
 
+        // defineProps({
+        //     num:{
+        //         type:Number,
+        //     }
+        // })
+        // console.log(num)
+        let num=ref('')
+onMounted(()=>{
+    instance.post('/sipc/user/total').then((res)=>{
+        num.value=res.data.totalNum
+        console.log('@@@',res);
+        // console.log('###',num);
+    }).catch((err)=>{
+        console.log(err);
+    })
+})
 </script>
 
 <style scoped>
