@@ -38,8 +38,8 @@ import { useRouter } from 'vue-router';
             answer: answer.value
         }
       instance.post('/sipc/frontend/first', obj).then((res)=>{
-        console.log(obj);
-        console.log(res);
+        // console.log(obj);
+        // console.log(res);
         if(res.code === "200" ){
             router.push('/front/question2');
         }else if(res.code === "400"){

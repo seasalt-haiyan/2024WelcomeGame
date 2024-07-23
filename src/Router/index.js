@@ -8,7 +8,6 @@ import Front from "@/Components/questions/front.vue";
 import QianDuan2 from "@/Components/questions/QianDuan2.vue";
 import QianDuan3 from "@/Components/questions/QianDuan3.vue";
 import QianDuan4 from "@/Components/questions/QianDuan4.vue";
-import QianDuanEnd from "@/Components/questions/QianDuanEnd.vue";
 import HouDuan1 from "@/Components/questions/HouDuan1.vue";
 import HouDuan2 from "@/Components/questions/HouDuan2.vue";
 import HouDuan3 from "@/Components/questions/HouDuan3.vue";

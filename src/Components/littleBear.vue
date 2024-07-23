@@ -20,7 +20,7 @@ import { defineProps } from 'vue'
 onMounted(()=>{
     instance.post('/sipc/user/total').then((res)=>{
         num.value=res.data.totalNum
-        console.log('@@@',res);
+        // console.log('@@@',res);
         // console.log('###',num);
     }).catch((err)=>{
         console.log(err);

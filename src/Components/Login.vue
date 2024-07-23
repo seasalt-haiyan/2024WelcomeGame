@@ -28,19 +28,20 @@ const submitForm = ()=>{
         name: name.value,
         studentId: studentId.value
     };
-    // axios.post('http://127.0.0.1:4523/m1/4859235-4514837-default/sipc/user/login', formData).then((res)=>{
-    //     console.log(res);
-    //     if(res.status === 200 ){
-    //         router.push('/entergame');
-    //     }
-    // }).catch((err)=>{
-    //     console.log(err);
-    // }); 
     instance.post('/sipc/user/login', formData).then((res)=>{
-        // console.log(res);
         if(res.code === "200" ){
             localStorage.setItem('token',res.data.token);
-            router.push('/entergame');
+            // console.log(res.data.page);
+            switch(res.data.page){
+                case 'StartPage1':
+                    router.push('/entergame');
+                    break;
+                case'Question2':
+                    router.push('/Cquestion2');
+                    break;
+                default:
+                    router.push('/divideClass');
+            }
         }
     }).catch((err)=>{
         alert('请检查姓名和学号是否正确');
