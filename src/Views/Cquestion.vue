@@ -50,9 +50,7 @@ import instance from '../http';
           },3000)
         }
     }
-  ).catch((err)=>{
-      alert('请检查你的代码是否正确');
-  });
+  )
     }
   </script>
   

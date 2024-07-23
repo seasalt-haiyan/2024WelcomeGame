@@ -175,4 +175,23 @@ const router = createRouter({
     ]
 })
 
+router.beforeEach((to, from, next) => {
+    // 如果目标路由是 '/'，则直接放行
+    if (to.path === '/') {
+      next();
+      return;
+    }
+  
+    // 获取 token
+    const token = localStorage.getItem('token');
+  
+    // 如果 token 存在，放行
+    if (token) {
+      next();
+    } else {
+      // 如果 token 不存在，重定向到首页或登录页面
+      next({ path: '/' });
+    }
+  });
+
 export default router;
