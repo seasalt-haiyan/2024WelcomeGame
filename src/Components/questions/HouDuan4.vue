@@ -9,14 +9,14 @@
         <p>界面上的六个按钮分别对应着六个学院，你需要按照对应的指引，去探索 SIPC 学院的六个不同领域：前端、产品、算法、物联、安全和游戏。当你按下按钮，相应的公钥就会存储在 Authorization 中。然后，你需要访问每个学院特的根路径+/back 路径来获取对应的私钥，这些私钥将会按照访问的顺序进行拼接，逐步形成一段完整的密语。</p>
         <p>你需要收集齐所有的私钥，将它们拼接成一句话——"innovation passion cooperation Wellcome to SIPC115 ！！！"，并提交给我。</p>
     </div>
-      <span class="answer">答案是：<input type="text" v-model="answer"></span>
+      <span class="answer">答案是：<input type="text" v-model="privateKey"></span>
   </WhiteScreen>
   <littleBear/>
   <littleLog/>
   <button  class="submit" @click="sumbit">
     提交
   </button>
-  
+  <CommonError v-if="error"/>
   
   
   </template>
@@ -26,11 +26,30 @@
   import littleBear from '../../Components/littleBear.vue';
   import littleLog from '../../Components/littleLog.vue';
       import { ref } from 'vue';
-      let answer = ref('');
-      
+      import CommonError from '../CommonError.vue';
+      import  instance  from '../../http';
+      import { useRouter } from 'vue-router';
+      let privateKey = ref('');
+      const router = useRouter();
+      let error = ref(false);
       const sumbit = ()=>{
         // axiox.post
-        console.log('111');
+        const obj = {
+          privateKey: privateKey.value
+        }
+        /*console.log('111');*/
+        instance.post('/sipc/backend/fourth', obj).then((res)=>{
+        console.log(obj);
+        console.log(res);
+        if(res.code === "200" ){
+            router.push('/end');
+        }else if(res.code === "400"){
+          error.value = true;
+          setTimeout(()=>{
+            error.value = false;
+          },3000)
+        }
+    })
       }
     </script>
     

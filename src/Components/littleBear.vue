@@ -26,6 +26,7 @@ onMounted(()=>{
         console.log(err);
     })
 })
+
 </script>
 
 <style scoped>

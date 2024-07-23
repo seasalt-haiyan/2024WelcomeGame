@@ -17,21 +17,40 @@
   <button  class="submit" @click="sumbit">
     提交
   </button>
-  
+  <CommonError v-if="error"/>
   
   
   </template>
     
     <script setup>
-  import WhiteScreen from '@/Components/WhiteScreen.vue';
-  import littleBear from '../../Components/littleBear.vue';
-  import littleLog from '../../Components/littleLog.vue';
+      import WhiteScreen from '@/Components/WhiteScreen.vue';
+      import littleBear from '../../Components/littleBear.vue';
+      import littleLog from '../../Components/littleLog.vue';
+      import CommonError from '../CommonError.vue';
+      import  instance  from '../../http';
+      import { useRouter } from 'vue-router';
       import { ref } from 'vue';
       let answer = ref('');
-      
+      const router = useRouter();
+      let error = ref(false);
       const sumbit = ()=>{
         // axiox.post
-        console.log('111');
+        const obj = {
+            answer: answer.value
+        }
+        
+        instance.post('/sipc/backend/second', obj).then((res)=>{
+          //console.log(res);
+          //console.log(obj);
+        if(res.code === "200" ){  
+          router.push('/back/question3');
+        }else if(res.code === "400"){
+          error.value = true;
+          setTimeout(()=>{
+            error.value = false;
+          },3000)
+        }
+    })
       }
     </script>
     
